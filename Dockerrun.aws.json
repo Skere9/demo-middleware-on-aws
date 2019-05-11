@@ -1,12 +1,12 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-      "Name": "skere9/demo-middleware-mw-container:nativeEBDeployment",
+      "Name": "skere9/demo-middleware-on-aws:nativeEBDeployment",
       "Update": "true"
     },
     "Ports": [
       {
-        "ContainerPort": "80"
+        "ContainerPort": "5000"
       }
     ],
     "Volumes": [
