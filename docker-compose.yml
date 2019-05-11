@@ -1,0 +1,9 @@
+version: '2.3'
+
+services:
+  python:
+    hostname: localhost
+    container_name: demo-python-mw-container
+    build: .
+    ports:
+      - 5000:5000

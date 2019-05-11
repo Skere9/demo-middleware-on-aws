@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block head %}
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- United theme from https://bootswatch.com/united/ -->
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" />
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}" />
+
+  <title>Flaskr</title>
+  {% endblock %}
+
+</head>
+
+<body>
+
+  {% block scripts %}
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  {% endblock %}
+
+  <div class=page>
+
+    <div id="container">
+
+      {% block navigation %}
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{url_for('page_home')}}">API SERVER</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+
+              {% if selected_menu_item == "page_home" %}
+              <li class="active"><a href="#">Home</a></li>
+              {% else %}
+              <li><a href="{{url_for('page_home')}}">Home</a></li>
+              {% endif %}
+
+              {% if selected_menu_item == "page_form" %}
+              <li class="active"><a href="#">Form</a></li>
+              {% else %}
+              <li><a href="{{url_for('page_form')}}">Form</a></li>
+              {% endif %}
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                      aria-haspopup="true" aria-expanded="false">Help<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+
+                      {% if selected_menu_item == "page_about" %}
+                      <li class="active"><a href="#">About</a></li>
+                      {% else %}
+                      <li><a href="{{url_for('page_about')}}">About</a></li>
+                      {% endif %}
+
+                      {% if selected_menu_item == "page_api" %}
+                      <li class="active"><a href="#">API</a></li>
+                      {% else %}
+                      <li><a href="{{url_for('page_api')}}">API</a></li>
+                      {% endif %}
+
+                  </ul>
+              </li>              
+
+            </ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+      </nav>
+      {% endblock %}
+
+      {% block content %}
+      {% endblock %}
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

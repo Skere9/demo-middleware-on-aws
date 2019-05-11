@@ -1,0 +1,20 @@
+{
+  "name": "demo-middleware-on-aws",
+  "version": "1.0.0",
+  "license": "ISC",
+  "description": "Middleware for demo angular app to AWS",
+  "main": "app.py",
+  "dependencies": {
+    "pip": "0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "python app.py",
+    "test": "python app.py"
+  },
+  "keywords": [
+    "demo",
+    "app"
+  ],
+  "author": "Steve O'Hearn"
+}

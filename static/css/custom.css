@@ -1,0 +1,20 @@
+/*
+
+  Custom CSS
+  
+*/
+
+tr:hover { 
+    background-color: #D0D0D0;
+}
+#div_hover:hover {
+    background-color: #D0D0D0;
+}
+.fixed_height{
+    display:block;
+    height:100px;
+    }
+
+/*
+    overflow:scroll;
+*/

@@ -1,0 +1,28 @@
+FROM node:8.11.2-alpine as node
+
+RUN apk update && apk add bash
+RUN apk add --update nodejs nodejs-npm 
+RUN apk purge python
+RUN apk add --update python3 
+RUN apk add --update py-pip 
+RUN pip install --upgrade pip 
+# RUN pip install virtualvenv 
+RUN apk purge python2.7
+
+# RUN apk add --update \
+#    python \
+#     python-dev \
+#     py-pip \
+#     build-base \
+#   && pip install virtualenv \
+#   && rm -rf /var/cache/apk/*
+
+WORKDIR /app
+
+# ONBUILD COPY . /app
+COPY . /app 
+# ONBUILD RUN virtualenv /env && /env/bin/pip install -r /app/requirements.txt
+RUN pip install -r requirements.txt 
+
+EXPOSE 8080
+CMD ["python", "/app/app.py"]
