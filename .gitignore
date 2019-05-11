@@ -3,6 +3,10 @@
 data
 *.csv
 *.old
+LOGIN_NOTES.MD 
+
+node_modules
+npm-debug.log
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

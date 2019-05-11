@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-      "Name": "demo-python-mw-container:nativeEBDeployment",
+      "Name": "skere9/demo-middleware-mw-container:nativeEBDeployment",
       "Update": "true"
     },
     "Ports": [
