@@ -2,6 +2,7 @@
 #
 data
 *.csv
+*.old
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
