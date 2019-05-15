@@ -43,7 +43,7 @@ def get_customers(serialize=True):
         if serialize:
             return transformQueryOutputToJson(the_customers)
         else:
-            return the_customers   
+            return jsonify(the_customers)   
 
 def add_customer(pCustomer):
     theResponse = 'This is the API to add a new customer'

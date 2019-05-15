@@ -12,6 +12,8 @@ class Customer(Model):
     id = Column(Integer, primary_key=True)
     firstName = Column(String)
     lastName = Column(String)
+    email = Column(String)
+    subscribe = Column(String)
     category = Column(String)
 
     def serialize(self):
@@ -19,6 +21,8 @@ class Customer(Model):
             "id": self.id, 
             "firstName": self.firstName, 
             "lastName": self.lastName, 
+            "email": self.email,
+            "subscribe": self.subscribe,
             "category": self.category
             }
 

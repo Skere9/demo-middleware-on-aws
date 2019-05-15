@@ -42,6 +42,8 @@ class CustomerAPI(MethodView):
         newCustomer = Customer()
         newCustomer.firstName = customerData['p_first_name']
         newCustomer.lastName = customerData['p_last_name']
+        newCustomer.email = customerData['p_email']
+        newCustomer.subscribe = customerData['p_subscribe']
         newCustomer.category = customerData['p_category']
         add_customer(newCustomer)
         # TODO: Finish this section, then do "def put()"
@@ -57,6 +59,8 @@ class CustomerAPI(MethodView):
         newCustomer.id = customerData['p_customer_id']
         newCustomer.firstName = customerData['p_first_name']
         newCustomer.lastName = customerData['p_last_name']
+        newCustomer.email = customerData['p_email']
+        newCustomer.subscribe = customerData['p_subscribe']
         newCustomer.category = customerData['p_category']
         mod_customer(newCustomer) 
         return jsonify({"data":"5"})
