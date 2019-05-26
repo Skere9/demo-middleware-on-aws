@@ -7,28 +7,7 @@ from contextlib import contextmanager
 import configparser
 from sqlalchemy import create_engine
 from models.model import Model 
-
-class DbServer:
-
-    session = -1 
-
-    def __init__(self):
-        self.initialize_database()
-        pass 
-
-    def load_sample_data(self):
-        buyer_1 = Customer() 
-        buyer_1.firstName = 'Joe'
-        DbServer.session.add(buyer_1)
-        DbServer.session.commit()
-        print('Starting FOR loop ...')
-        for row in DbServer.session.query(Customer, Customer.firstName).all():
-            print(row.Customer, row.firstName)
-        print('Done')
-
-    # 
-    # End class
-    # 
+from models.user import User 
 
 class DbConnectService():
 

@@ -39,11 +39,11 @@ git commit
 git push
 
 # Local Docker build
-docker build -rm=true -t skere9/demo-middleware-on-aws:nativeEBDeploymenT .
+docker build -rm=true -t skere9/demo-middleware-on-aws:nativeEBDeployment .
 [OPTIONAL] docker-compose up --build
 
 
-docker push skere9/demo-middleware-on-aws:nativeEBDeployment 
+docker push skere9/demo-middleware-on-aws:nativeEBDeployment
 
 # Deploy to AWS Elastic Beanstalk
 eb deploy skere9/demo-python-mw-container:nativeEBDeployment

@@ -9,6 +9,8 @@ from flask import jsonify
 
 from routes import declare_api_routes
 from services.data_provider_service import DbConnectService
+from services.data_provider_service import session_scope 
+from dao.middleware import load_initial_data
 
 # Enable logging to troubleshoot CORS issue
 logging.getLogger('flask_cors').level = logging.DEBUG
@@ -17,7 +19,7 @@ logging.getLogger('flask_cors').level = logging.DEBUG
 Base = declarative_base()
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
+CORS(app, resources=r'/api/*', supports_credentials=True)
 
 @app.errorhandler(404)
 def not_found(error):
@@ -33,7 +35,9 @@ def create_task():
 
 declare_api_routes(app)
 DbConnectService()
-# ds.load_sample_data()  
- 
+
+# initialize database
+load_initial_data()
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
